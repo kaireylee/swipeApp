@@ -14,10 +14,18 @@ const DATA = [
 ];
 
 export default class App extends React.Component {
+  renderCard(item) {
+    return (
+      <Text>{item.text}</Text>
+    )
+  }
   render() {
     return (
       <View style={styles.container}>
-        <Deck />
+        <Deck
+          data={DATA}
+          renderCard={this.renderCard} 
+        />
       </View>
     );
   }
